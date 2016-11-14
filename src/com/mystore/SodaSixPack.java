@@ -1,4 +1,4 @@
-package com.morgan;
+package com.mystore;
 
 public class SodaSixPack implements Grocery {
 	private int deposit;

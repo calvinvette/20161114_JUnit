@@ -1,10 +1,12 @@
-package com.morgan;
+package com.mystore;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.mystore.Message;
 
 public class TestMessage {
 	private Message message;

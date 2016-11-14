@@ -1,4 +1,4 @@
-package com.morgan;
+package com.mystore;
 
 public class Message {
 	private String message;
