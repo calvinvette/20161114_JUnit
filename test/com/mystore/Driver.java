@@ -6,16 +6,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class Driver {
 	SodaSixPack ssp;
 	private Map<Integer, Integer> truthTable = new HashMap<>();	
-
-	@Before
-	public void setup() {
-		ssp = new SodaSixPack();
+	
+	@BeforeClass
+	public void beforeAllTests() {
+		// Read this from a spreadsheet later...
+		// Use CSV/TSV ideally or Apache POI if it's an Excel spreadsheet
 		truthTable.put(1, 350);
 		truthTable.put(2, 700);
 		truthTable.put(3, 1050);
@@ -23,17 +26,40 @@ public class Driver {
 		truthTable.put(5, 1550);
 	}
 
+	@Before
+	public void setup() {
+		ssp = new SodaSixPack();
+	}
+
 	@After
 	public void tearDown() {
 		ssp = null;
 	}
 
+	@AfterClass 
+	public void afterAllTest() {
+		truthTable = null;
+	}
+	
+	// BeforeClass
+	// Before
+	// testSixPackPrices
+	// After
+	// Before
+	// testSixPackDeposits
+	// After
+	// AfterClass
+	
+	
 	@Test
 	public void testSixPackPrices() {
 		for (Map.Entry<Integer, Integer> entry : truthTable.entrySet()) {
 			ssp.setQuantity(entry.getKey());
 			assertEquals("Discount Logic failed @qty:" + entry.getKey(), 
-					new Long(entry.getValue()), new Long(ssp.getPrice()));
+//					new Long(entry.getValue()), new Long(ssp.getPrice())
+					entry.getValue(), ssp.getPrice() 
+//					entry.getValue(), new Integer(ssp.getPrice()) 
+					);
 		}
 	}
 	

@@ -3,7 +3,7 @@ package com.mystore;
 public class SodaSixPack implements Grocery {
 	private int deposit;
 	private int quantity;
-	private int price;
+	private Integer price;
 	private boolean taxable;
 
 	public SodaSixPack() {
@@ -23,7 +23,7 @@ public class SodaSixPack implements Grocery {
 	 * @see com.morgan.Grocery#getQuantity()
 	 */
 	@Override
-	public int getQuantity() {
+	public Integer getQuantity() {
 		return quantity;
 	}
 
@@ -33,7 +33,7 @@ public class SodaSixPack implements Grocery {
 	 * @see com.morgan.Grocery#setQuantity(int)
 	 */
 	@Override
-	public void setQuantity(int quantity) {
+	public void setQuantity(Integer quantity) {
 		this.deposit = quantity * 6 * 5;
 		this.quantity = quantity;
 	}
@@ -44,7 +44,7 @@ public class SodaSixPack implements Grocery {
 	 * @see com.morgan.Grocery#getPrice()
 	 */
 	@Override
-	public int getPrice() {
+	public Integer getPrice() {
 		if ((this.quantity / 4) >= 1) {
 			this.price = 1200 + (this.quantity - 4) * 350;
 		} else {

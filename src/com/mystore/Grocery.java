@@ -2,11 +2,11 @@ package com.mystore;
 
 public interface Grocery {
 
-	int getQuantity();
+	Integer getQuantity();
 
-	void setQuantity(int quantity);
+	void setQuantity(Integer quantity);
 
-	int getPrice();
+	Integer getPrice();
 
 	boolean isTaxable();
 
