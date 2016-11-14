@@ -1,0 +1,35 @@
+<project name="MyProject" default="junit" basedir=".">
+	<description>
+    simple example build file
+  </description>
+	<!-- set global properties for this build -->
+	<property name="src" location="src" />
+	<property name="testSrc" location="test" />
+	<property name="build" location="classes" />
+	<property name="dist" location="dist" />
+
+	<target name="compile" description="compile the source">
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src}" destdir="${build}" />
+		<javac srcdir="${testSrc}" destdir="${build}" />
+	</target>
+
+	<target name="junit" depends="compile">
+
+		<junit printsummary="yes" haltonfailure="no">
+
+			<!-- Project classpath, must include junit.jar -->
+			<classpath refid="test.path" />
+
+			<!-- test class -->
+			<classpath location="${test.classes.dir}" />
+
+			<test name="com.morgan.TestMessage" haltonfailure="no" todir="${report.dir}">
+				<formatter type="plain" />
+				<formatter type="xml" />
+			</test>
+
+		</junit>
+	</target>
+
+</project>
