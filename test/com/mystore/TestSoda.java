@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class Driver {
+public class TestSoda {
 	SodaSixPack ssp;
 	private static Map<Integer, Integer> truthTable = new HashMap<>();	
 	
