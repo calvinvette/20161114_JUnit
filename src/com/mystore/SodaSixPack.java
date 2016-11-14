@@ -45,13 +45,17 @@ public class SodaSixPack implements Grocery {
 	 */
 	@Override
 	public Integer getPrice() {
-		if ((this.quantity / 4) >= 1) {
-			this.price = 1200 + (this.quantity - 4) * 350;
-		} else {
-			this.price = quantity * 350;
-		}
-//		this.price = quantity * 350;
+		this.price = (this.quantity % 4) * 350;
+		this.price += new Double((Math.floor((this.quantity / 4) * 1200))).intValue();
 		return price;
+		
+//		if ((this.quantity / 4) >= 1) {
+//			this.price = 1200 + (this.quantity - 4) * 350;
+//		} else {
+//			this.price = quantity * 350;
+//		}
+//		this.price = quantity * 350;
+		
 	}
 
 	public void setPrice(int price) {

@@ -13,10 +13,10 @@ import org.junit.Test;
 
 public class Driver {
 	SodaSixPack ssp;
-	private Map<Integer, Integer> truthTable = new HashMap<>();	
+	private static Map<Integer, Integer> truthTable = new HashMap<>();	
 	
 	@BeforeClass
-	public void beforeAllTests() {
+	public static void beforeAllTests() {
 		// Read this from a spreadsheet later...
 		// Use CSV/TSV ideally or Apache POI if it's an Excel spreadsheet
 		truthTable.put(1, 350);
@@ -24,6 +24,13 @@ public class Driver {
 		truthTable.put(3, 1050);
 		truthTable.put(4, 1200);
 		truthTable.put(5, 1550);
+		truthTable.put(6, 1900);
+		truthTable.put(7, 2250);
+		truthTable.put(8, 2400);
+		truthTable.put(9, 2750);
+		truthTable.put(10, 3100);
+		truthTable.put(11, 3450);
+		truthTable.put(12, 3600);
 	}
 
 	@Before
@@ -37,7 +44,7 @@ public class Driver {
 	}
 
 	@AfterClass 
-	public void afterAllTest() {
+	public static void afterAllTest() {
 		truthTable = null;
 	}
 	
