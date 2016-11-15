@@ -3,7 +3,7 @@ package com.mystore;
 public class DishSoap implements Grocery {
 	private int quantity;
 	private Integer price;
-	private boolean taxable;
+	private boolean taxable = true;
 
 	public DishSoap() {
 	}

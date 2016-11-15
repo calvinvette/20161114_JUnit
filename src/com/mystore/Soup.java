@@ -3,7 +3,7 @@ package com.mystore;
 public class Soup implements Grocery {
 	private int quantity;
 	private Integer price;
-	private boolean taxable;
+	private boolean taxable = false;
 
 	public Soup() {
 	}

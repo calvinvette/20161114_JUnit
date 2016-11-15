@@ -13,12 +13,13 @@ import org.junit.Test;
 
 public class TestDishSoap {
 	DishSoap dishSoap;
-	private static Map<Integer, Integer> truthTable = new HashMap<>();	
+	private static Map<Integer, Integer> truthTable;	
 	
 	@BeforeClass
 	public static void beforeAllTests() {
 		// Read this from a spreadsheet later...
 		// Use CSV/TSV ideally or Apache POI if it's an Excel spreadsheet
+		truthTable = new HashMap<>();
 		truthTable.put(1, 289);
 		truthTable.put(2, 289*2);
 		truthTable.put(3, 289*3);
